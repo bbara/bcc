@@ -22,6 +22,7 @@ typedef enum {
   BCC_ARCH_PPC_LE,
   BCC_ARCH_S390X,
   BCC_ARCH_ARM64,
+  BCC_ARCH_ARM,
   BCC_ARCH_X86
 } bcc_arch_t;
 
