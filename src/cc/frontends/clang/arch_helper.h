@@ -44,6 +44,8 @@ static void *run_arch_callback(arch_callback_t fn, bool for_syscall = false)
     return fn(BCC_ARCH_S390X, for_syscall);
 #elif defined(__aarch64__)
     return fn(BCC_ARCH_ARM64, for_syscall);
+#elif defined(__arm__)
+    return fn(BCC_ARCH_ARM, for_syscall);
 #else
     return fn(BCC_ARCH_X86, for_syscall);
 #endif
@@ -60,6 +62,8 @@ static void *run_arch_callback(arch_callback_t fn, bool for_syscall = false)
     return fn(BCC_ARCH_S390X, for_syscall);
   } else if (!strcmp(archenv, "arm64")) {
     return fn(BCC_ARCH_ARM64, for_syscall);
+  } else if (!strcmp(archenv, "arm")) {
+    return fn(BCC_ARCH_ARM, for_syscall);
   } else {
     return fn(BCC_ARCH_X86, for_syscall);
   }
